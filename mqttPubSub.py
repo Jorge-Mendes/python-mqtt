@@ -7,7 +7,7 @@ import time, random, string, logging, json
 from datetime import datetime
 
 
-# Parameters
+# Configurations
 use_websockets = False      # Use websockets
 use_ssl_tls = False         # Use SSL/TLS
 use_credentials = True      # Use credentials to connect to the host
@@ -17,31 +17,22 @@ publish_message = True      # Activate message publication
 publish_interval = 1        # Publish message interval (in seconds)
 
 
-# Create random string to use in ClientID
-def get_random_alphanumeric_string(length):
-    letters_and_digits = string.ascii_letters + string.digits
-    result_str = ''.join((random.choice(letters_and_digits) for i in range(length)))
-    return result_str
-
-
-# Configurations
+# Parameters
 mqtt_host = "xxxxxxxxxx"
-if use_websockets:
-    mqtt_port = 8081
-else:
-    mqtt_port = 8883
-mqtt_keepalive_interval = 60
+mqtt_port = 8883
+mqtt_username = "xxxxxxxxxx"
+mqtt_password = "xxxxxxxxxx"
+mqtt_ssl_tls = "xxxxxxxxxx"
 mqtt_topic = "xxxxxxxxxx"
-if use_credentials:
-    mqtt_username = "xxxxxxxxxx"
-    mqtt_password = "xxxxxxxxxx"
-mqtt_clientid = "python-mqtt-{}".format(get_random_alphanumeric_string(15))
-if use_ssl_tls:
-    mqtt_tls = "xxxxxxxxxx"
 mqtt_qos  = 0
 mqtt_retain = False
+mqtt_keepalive_interval = 60
+
+
+# Show parameters
+mqtt_clientid = "python-mqtt-{}".format(''.join(random.choice(string.ascii_letters + string.digits) for i in range(15)))
 connected = False
-print("\nHost:\t\t{}\nPort:\t\t{}\nTopic:\t\t{}\nUsername:\t{}\nPassword:\t{}\nClientID:\t{}\n".format(mqtt_host, mqtt_port, mqtt_topic, mqtt_username, mqtt_password, mqtt_clientid))
+print("\nHost:\t\t\t{}\nPort:\t\t\t{}\nUsername:\t\t{}\nPassword:\t\t{}\nSSL/TLS certificate:\t{}\nTopic:\t\t\t{}\nClientID:\t\t{}\nQoS:\t\t\t{}\nRetain:\t\t\t{}\n".format(mqtt_host, mqtt_port, mqtt_username if use_credentials else 'use_credentials not activated', mqtt_password if use_credentials else 'use_credentials not activated', mqtt_ssl_tls if use_ssl_tls else 'use_ssl_tls not activated', mqtt_topic, mqtt_clientid, mqtt_qos, mqtt_retain))
 
 
 # Create message to publish
@@ -64,7 +55,7 @@ def connect_mqtt():
     if use_websockets:
         client = mqtt_client.Client(client_id=mqtt_clientid, clean_session=True, transport="websockets")
         if use_ssl_tls:
-            client.tls_set(mqtt_tls) # Use only for SSL/TLS certificate
+            client.tls_set(mqtt_ssl_tls) # Use only for SSL/TLS certificate
         else:
             client.tls_set()
     else:
