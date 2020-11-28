@@ -2,7 +2,6 @@
 
 This repository provides a python script that allows you to both publish and subscribe messages via [MQTT](https://mqtt.org/) using [paho-mqtt](https://pypi.org/project/paho-mqtt/) library.
 
-<br>
 
 ## Table of Contents
 1. [How to install](#howtoinstall)
@@ -10,7 +9,6 @@ This repository provides a python script that allows you to both publish and sub
 2. [How to run](#howtorun)
 3. [Screenshots](#screenshots)
 
-<br>
 
 ## How to install <a name="howtoinstall"></a>
 
@@ -18,7 +16,6 @@ This repository provides a python script that allows you to both publish and sub
 pip install -r requirements.txt
 ```
 
-<br>
 
 ## How to configure <a name="howtoconfigure"></a>
 
@@ -50,7 +47,6 @@ The script configurations can be made in the [Configurations](https://github.com
 | mqtt_retain             | Retained Messages                      | True/False |
 | mqtt_keepalive_interval | Keep the connection alive (in seconds) | Integer    |
 
-<br>
 
 ## How to run <a name="howtorun"></a>
 
@@ -58,7 +54,6 @@ The script configurations can be made in the [Configurations](https://github.com
 python mqttPubSub.py
 ```
 
-<br>
 
 ## Screenshots <a name="screenshots"></a>
 
