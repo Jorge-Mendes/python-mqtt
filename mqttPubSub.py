@@ -32,7 +32,7 @@ mqtt_keepalive_interval = 60
 # Show parameters
 mqtt_clientid = "python-mqtt-{}".format(''.join(random.choice(string.ascii_letters + string.digits) for i in range(15)))
 connected = False
-print("\nHost:\t\t\t{}\nPort:\t\t\t{}\nUsername:\t\t{}\nPassword:\t\t{}\nSSL/TLS certificate:\t{}\nTopic:\t\t\t{}\nClientID:\t\t{}\nQoS:\t\t\t{}\nRetain:\t\t\t{}\n".format(mqtt_host, mqtt_port, mqtt_username if use_credentials else 'use_credentials not activated', mqtt_password if use_credentials else 'use_credentials not activated', mqtt_ssl_tls if use_ssl_tls else 'use_ssl_tls not activated', mqtt_topic, mqtt_clientid, mqtt_qos, mqtt_retain))
+print("\nHost:\t\t\t{}\nPort:\t\t\t{}\nUsername:\t\t{}\nPassword:\t\t{}\nSSL/TLS certificate:\t{}\nTopic:\t\t\t{}\nClientID:\t\t{}\nQoS:\t\t\t{}\nRetain:\t\t\t{}\n".format(mqtt_host, mqtt_port, mqtt_username if use_credentials else 'use_credentials not activated', mqtt_password if use_credentials else 'use_credentials not activated', mqtt_certificate_path if use_ssl_tls else 'use_ssl_tls not activated', mqtt_topic, mqtt_clientid, mqtt_qos, mqtt_retain))
 
 
 # Create message to publish
@@ -55,7 +55,7 @@ def connect_mqtt():
     if use_websockets:
         client = mqtt_client.Client(client_id=mqtt_clientid, clean_session=True, transport="websockets")
         if use_ssl_tls:
-            client.tls_set(mqtt_ssl_tls) # Use only for SSL/TLS certificate
+            client.tls_set(mqtt_certificate_path) # Use only for SSL/TLS certificate
         else:
             client.tls_set()
     else:
@@ -92,7 +92,7 @@ def publish(client):
     
     # onPublish Function
     def on_publish(client, userdata, mid):
-        print("Message published on topic '{}': {}".format(mqtt_topic, msg))
+        print("Message published on topic '{}': {}".format(mqtt_topic, mqtt_payload))
     client.on_publish = on_publish
 
     # Start loop
@@ -105,8 +105,8 @@ def publish(client):
     # Publish
     try:
         while True:
-            msg = create_message()
-            client.publish(mqtt_topic, msg, mqtt_qos, mqtt_retain)
+            mqtt_payload = create_message()
+            client.publish(mqtt_topic, mqtt_payload, mqtt_qos, mqtt_retain)
             time.sleep(publish_interval)
 
     # Disconnect Client and stop loop

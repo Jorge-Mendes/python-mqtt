@@ -41,7 +41,7 @@ The script configurations can be made in the [Configurations](https://github.com
 | mqtt_port               | MQTT broker port                       | Integer    |
 | mqtt_username           | MQTT broker username                   | String     |
 | mqtt_password           | MQTT broker password                   | String     |
-| mqtt_ssl_tls            | SSL/TLS certificate                    | CRT File   |
+| mqtt_certificate_path   | SSL/TLS certificate                    | CRT File   |
 | mqtt_topic              | MQTT broker topic                      | String     |
 | mqtt_qos                | Quality of Service (0, 1 or 2)         | Integer    |
 | mqtt_retain             | Retained Messages                      | True/False |
