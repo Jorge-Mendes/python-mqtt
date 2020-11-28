@@ -142,7 +142,7 @@ def subscribe(client):
 
 
 # Main function
-def run_mqtt_publisher():
+def run_mqtt():
     client = connect_mqtt()
     if not publish_message and not subscribe_topic:
         print("Please enable publish or subscribe!\n")
@@ -156,7 +156,7 @@ def run_mqtt_publisher():
 
 
 if __name__ == '__main__':
-    run_mqtt_publisher()
+    run_mqtt()
 
     # Sources: https://www.emqx.io/blog/how-to-use-mqtt-in-python
     #          https://github.com/eclipse/paho.mqtt.python/blob/master/examples/client_sub.py
