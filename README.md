@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 The script configurations can be made in the [Configurations](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L10-L17) and [Parameters](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L20-L29) sections of the script.
 
-## [Configurations](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L10-L17)
+### [Configurations](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L10-L17)
 
 | Configuration    | About                                  | Value         |
 |------------------|----------------------------------------|---------------|
@@ -36,9 +36,7 @@ The script configurations can be made in the [Configurations](https://github.com
 | publish_message  | Activate message publication           | True/False    |
 | publish_interval | Publish message interval (in seconds)  | Integer       |
 
-<br>
-
-## [Parameters](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L20-L29)
+### [Parameters](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L20-L29)
 
 | Parameter               | About                                  | Value      |
 |-------------------------|----------------------------------------|------------|
