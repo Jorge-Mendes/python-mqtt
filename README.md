@@ -57,4 +57,12 @@ python mqttPubSub.py
 
 ## Screenshots <a name="screenshots"></a>
 
-...
+### Subscribe
+
+![MQTT.fx publish](screenshots/publish_mqttfx.png)
+![mqttPubSub subscribe](screenshots/subscribe_py.png)
+
+### Publish
+
+![mqttPubSub publish](screenshots/publish_py.png)
+![MQTT.fx subscribe](screenshots/subscribe_mqttfx.png)
