@@ -24,7 +24,9 @@ pip install -r requirements.txt
 
 The script configurations can be made in the [Configurations](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L10-L17) and [Parameters](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L20-L29) sections of the script.
 
-| Configurations   |                                        |               |
+## [Configurations](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L10-L17)
+
+| Configuration    | About                                  | Value         |
 |------------------|----------------------------------------|---------------|
 | use_websockets   | Use websockets                         | True/False    |
 | use_ssl_tls      | Use SSL/TLS                            | True/False    |
@@ -36,7 +38,9 @@ The script configurations can be made in the [Configurations](https://github.com
 
 <br>
 
-| Parameters              |                                        |            |
+## [Parameters](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L20-L29)
+
+| Parameter               | About                                  | Value      |
 |-------------------------|----------------------------------------|------------|
 | mqtt_host               | MQTT broker host                       | URL        |
 | mqtt_port               | MQTT broker port                       | Integer    |
