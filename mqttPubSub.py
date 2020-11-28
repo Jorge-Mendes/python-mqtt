@@ -10,7 +10,7 @@ from datetime import datetime
 # Configurations
 use_websockets = False      # Use websockets
 use_ssl_tls = False         # Use SSL/TLS
-use_credentials = True      # Use credentials to connect to the host
+use_credentials = False      # Use credentials to connect to the host
 use_debug_log = False       # Activate debug log
 subscribe_topic = False     # Activate topic subscription
 publish_message = True      # Activate message publication
@@ -18,12 +18,12 @@ publish_interval = 1        # Publish message interval (in seconds)
 
 
 # Parameters
-mqtt_host = "xxxxxxxxxx"
-mqtt_port = 8883
-mqtt_username = "xxxxxxxxxx"
-mqtt_password = "xxxxxxxxxx"
-mqtt_ssl_tls = "xxxxxxxxxx"
-mqtt_topic = "xxxxxxxxxx"
+mqtt_host = "test.mosquitto.org"
+mqtt_port = 1883
+mqtt_username = ""
+mqtt_password = ""
+mqtt_ssl_tls = ""
+mqtt_topic = "test_topic_mqtt"
 mqtt_qos  = 0
 mqtt_retain = False
 mqtt_keepalive_interval = 60
