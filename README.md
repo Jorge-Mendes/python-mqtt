@@ -23,7 +23,7 @@ The script configurations can be made in the [Configurations](https://github.com
 
 ### [Configurations](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L10-L17)
 
-| Configuration    | About                                  | Value         |
+| Configuration    | Description                            | Value         |
 |------------------|----------------------------------------|---------------|
 | use_websockets   | Use websockets                         | True/False    |
 | use_ssl_tls      | Use SSL/TLS                            | True/False    |
@@ -35,7 +35,7 @@ The script configurations can be made in the [Configurations](https://github.com
 
 ### [Parameters](https://github.com/Jorge-Mendes/python-mqtt/blob/main/mqttPubSub.py#L20-L29)
 
-| Parameter               | About                                  | Value      |
+| Parameter               | Description                            | Value      |
 |-------------------------|----------------------------------------|------------|
 | mqtt_host               | MQTT broker host                       | URL        |
 | mqtt_port               | MQTT broker port                       | Integer    |
